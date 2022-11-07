@@ -12,7 +12,8 @@ module.exports = {
 		'plugin:react/recommended',
 		'plugin:react-hooks/recommended',
 		'plugin:jsx-a11y/recommended',
-		'plugin:storybook/recommended'
+		'plugin:storybook/recommended',
+		'prettier'
 	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {

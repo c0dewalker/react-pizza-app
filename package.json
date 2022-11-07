@@ -17,12 +17,11 @@
 	"dependencies": {
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"//": "fix vite/rollup build error: styled-components not finding react-is",
 		"react-is": "^16.13.1",
 		"react-router-dom": "^6.4.3",
 		"styled-components": "^5.3.6"
 	},
-	"dependenciesComments" : {
+	"dependenciesComments": {
 		"react-is": "fix vite/rollup build error: styled-components not finding react-is"
 	},
 	"devDependencies": {
