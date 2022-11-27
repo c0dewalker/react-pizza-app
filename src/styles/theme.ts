@@ -1,5 +1,5 @@
 import { DefaultTheme } from 'styled-components'
-import { fontSize as fontSizeMixin } from './mixins'
+import { fontSizeMixin } from './mixins'
 
 declare module 'styled-components' {
 	export interface DefaultTheme {
@@ -11,6 +11,7 @@ declare module 'styled-components' {
 		}
 		shadow: typeof shadow
 		borderRadius: typeof borderRadius
+		breaktpoints: typeof breaktpoints
 	}
 }
 
@@ -37,7 +38,7 @@ const spacing = {
 	l: '16px',
 	xl: '24px',
 	'2xl': '32px'
-}
+} as const
 
 const fontSize = {
 	xs: fontSizeMixin(12, 18),
@@ -47,12 +48,13 @@ const fontSize = {
 	xl: fontSizeMixin(24, 32),
 	'2xl': fontSizeMixin(28, 36),
 	'3xl': fontSizeMixin(40, 56)
-}
+} as const
+
 const fontWeight = {
 	regular: 400,
 	medium: 600,
 	bold: 800
-}
+} as const
 const font = { size: fontSize, weight: fontWeight }
 
 const borderRadius = {
@@ -63,13 +65,18 @@ const borderRadius = {
 	l: '14px',
 	xl: '16px',
 	round: '50%'
-}
+} as const
 
 const shadow = {
-	sm: 'box-shadow: 0px 16px 32px rgba(75, 75, 124, 0.05), 0px 0px 4px rgba(75, 75, 124, 0.1);',
-	lg: 'box-shadow: 0px 8px 16px rgba(75, 75, 124, 0.05);',
-	panelTop: 'box-shadow: 0px -16px 32px rgba(75, 75, 124, 0.05), 0px 0px 4px rgba(75, 75, 124, 0.1);',
-	panelBottom: 'box-shadow: 0px 16px 32px rgba(75, 75, 124, 0.05), 0px 0px 4px rgba(75, 75, 124, 0.1);'
+	sm: 'box-shadow: 0 16px 32px rgba(75, 75, 124, 0.05), 0 0 4px rgba(75, 75, 124, 0.1);',
+	lg: 'box-shadow: 0 8px 16px rgba(75, 75, 124, 0.05);',
+	panelTop: 'box-shadow: 0 -16px 32px rgba(75, 75, 124, 0.05), 0 0 4px rgba(75, 75, 124, 0.1);',
+	panelBottom: 'box-shadow: 0 16px 32px rgba(75, 75, 124, 0.05), 0 0 4px rgba(75, 75, 124, 0.1);',
+	innerSm: 'box-shadow: inset 0 2px 2px rgba(20, 20, 55, 0.1);'
 }
 
-export const theme: DefaultTheme = { color, spacing, font, borderRadius, shadow }
+const breaktpoints = {
+	desktop: '(min-width: 768px)'
+}
+
+export const theme: DefaultTheme = { color, spacing, font, borderRadius, shadow, breaktpoints }
