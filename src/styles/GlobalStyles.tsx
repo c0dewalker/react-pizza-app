@@ -93,6 +93,14 @@ export const GlobalStyle = createGlobalStyle(
 			user-select: none;
 		}
 
+		ul {
+			margin: 0;
+		}
+
+		li {
+			list-style: none;
+		}
+
 		.visually-hidden {
 			display: inline-block;
 			position: absolute;
