@@ -11,7 +11,7 @@ declare module 'styled-components' {
 		}
 		shadow: typeof shadow
 		borderRadius: typeof borderRadius
-		breaktpoints: typeof breaktpoints
+		breakpoints: typeof breakpoints
 	}
 }
 
@@ -29,7 +29,7 @@ const color = {
 	success: '#00A896',
 	warning: '#F18F01',
 	error: '#E3170A'
-}
+} as const
 
 const spacing = {
 	xs: '4px',
@@ -73,10 +73,10 @@ const shadow = {
 	panelTop: 'box-shadow: 0 -16px 32px rgba(75, 75, 124, 0.05), 0 0 4px rgba(75, 75, 124, 0.1);',
 	panelBottom: 'box-shadow: 0 16px 32px rgba(75, 75, 124, 0.05), 0 0 4px rgba(75, 75, 124, 0.1);',
 	innerSm: 'box-shadow: inset 0 2px 2px rgba(20, 20, 55, 0.1);'
-}
+} as const
 
-const breaktpoints = {
+const breakpoints = {
 	desktop: '(min-width: 768px)'
 }
 
-export const theme: DefaultTheme = { color, spacing, font, borderRadius, shadow, breaktpoints }
+export const theme: DefaultTheme = { color, spacing, font, borderRadius, shadow, breakpoints }

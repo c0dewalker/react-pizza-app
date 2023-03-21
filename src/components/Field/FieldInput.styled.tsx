@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 export const StyledInput = styled.input(
-	({ theme: { color, spacing, borderRadius, breaktpoints } }) => css`
+	({ theme: { color, spacing, borderRadius, breakpoints } }) => css`
 		border: 2px solid ${color.gray200};
 		border-radius: ${borderRadius.xs};
 		padding: ${spacing.m};
@@ -19,7 +19,7 @@ export const StyledInput = styled.input(
 			outline-color: ${color.primary};
 		}
 
-		@media ${breaktpoints.desktop} {
+		@media ${breakpoints.desktop} {
 			padding: ${spacing.l};
 		}
 	`

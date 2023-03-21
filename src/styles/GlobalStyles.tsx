@@ -1,7 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle(
-	({ theme: { color, font } }) => css`
+	({ theme: { color, font, breakpoints } }) => css`
 		@font-face {
 			font-family: 'Nunito';
 			font-style: normal;
@@ -27,8 +27,6 @@ export const GlobalStyle = createGlobalStyle(
 		:root {
 			box-sizing: border-box;
 			font-family: Nunito, Futura, Avenir, Arial, sans-serif;
-			${font.size.base}
-			font-weight: ${font.weight.regular};
 			-webkit-text-size-adjust: 100%;
 			color: ${color.gray600};
 		}
@@ -41,6 +39,12 @@ export const GlobalStyle = createGlobalStyle(
 
 		body {
 			margin: 0;
+			${font.size.sm};
+		}
+		@media ${breakpoints.desktop} {
+			body {
+				${font.size.base};
+			}
 		}
 
 		button,
@@ -85,6 +89,20 @@ export const GlobalStyle = createGlobalStyle(
 			display: block;
 			width: 100%;
 			height: auto;
+			user-drag: none;
+			user-select: none;
+		}
+
+		.visually-hidden {
+			display: inline-block;
+			position: absolute;
+			overflow: hidden;
+			clip: rect(0 0 0 0);
+			height: 1;
+			width: 1;
+			margin: -1;
+			padding: 0;
+			border: 0;
 		}
 	`
 )
